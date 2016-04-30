@@ -4,32 +4,52 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\SignupForm */
 
+use common\models\User;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Signup';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Регистрация';
 ?>
 <div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="row">
+        <div class="col-md-7 col-md-offset-5">
+            <h1><?= Html::encode($this->title) ?></h1>
+        </div>
+    </div>
 
-    <p>Please fill out the following fields to signup:</p>
 
     <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+        <?php $form = ActiveForm::begin(
+            [
+                'id' => 'login-form',
+                'layout' => 'horizontal',
+                'fieldConfig' => [
+                    'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+                    'horizontalCssClasses' => [
+                        'label' => 'col-md-2 col-md-offset-2',
+                        'offset' => 'col-md-offset-4',
+                        'wrapper' => 'col-md-5',
+                        'error' => '',
+                        'hint' => '',
+                    ],
+                ],
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+            ]
+        );
+        ?>
 
-                <?= $form->field($model, 'email') ?>
+        <?= $form->field($model, 'username')->textInput() ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'email') ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-                </div>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
-            <?php ActiveForm::end(); ?>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4">
+                <?= Html::submitButton('Зарегистрироваться', ['class' => 'btn btn-default', 'name' => 'signup-button']) ?>
+            </div>
         </div>
+
+        <?php ActiveForm::end(); ?>
     </div>
 </div>
