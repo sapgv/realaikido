@@ -37,7 +37,6 @@ AppAsset::register($this);
 
     <div class="row">
       <div class="col-lg-6">
-        <h2 style="color: #9d9d9d">+7 (912) 2 800 572</h2>
 
       </div>
       <div class="col-lg-6">
@@ -84,7 +83,7 @@ AppAsset::register($this);
 //            . '</li>';
     }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-left'],
 //        'encodeLabels'=>true,
         'items' => $menuItems,
     ]);
