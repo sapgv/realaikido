@@ -57,7 +57,16 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Главная', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
+        ['label' => 'Новости', 'url' => ['/post/index']],
+        [
+            'label' => 'Реальное айкидо',
+            'items' => [
+                ['label' => 'Айкидо', 'url' => ['/real/index']],
+                ['label' => 'Любомир  Врачаревич', 'url' => '#'],
+                ['label' => 'Мастера', 'url' => '#'],
+                ['label' => 'Клубы', 'url' => '#'],
+            ],
+        ],
         ['label' => 'Contact', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
