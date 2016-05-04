@@ -5,6 +5,9 @@
  * Date: 03.05.16
  * Time: 23:29
  */
+use yii\helpers\Html;
+use yii\helpers\Url;
+
 ?>
 
 
@@ -16,7 +19,10 @@
 
     <div class="col-lg-12">
 
-        <h3><?=$post->name?></h3>
+        <?= Html::a($post->name,Url::toRoute(['post/view','id'=>$post->id]),['class'=>'h3'])?>
+        <p class="text-muted"><?= $post->getFormattedDate()?></p>
+
+        <p><?= $post->preview;?></p>
     </div>
 </div>
 

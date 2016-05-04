@@ -21,5 +21,11 @@ class RealController extends Controller
 
     }
 
+    public function actionCoaches()
+    {
+
+        return $this->render('coaches');
+
+    }
 
 }

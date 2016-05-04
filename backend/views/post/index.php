@@ -6,6 +6,7 @@
  * Time: 20:36
  */
 
+use yii\grid\ActionColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
@@ -71,6 +72,22 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a($model->name,['post/view','id'=>$model->id]);
                     },
                 ],
+
+                [
+                    'class' => 'yii\grid\DataColumn', // can be omitted, as it is the default
+                    'label' => 'Заголовок',
+                    'format' => 'raw',
+                    'value' => function ($model) {
+                        return
+                            Html::a('Просмотр',['post/view','id'=>$model->id],['class'=>'btn btn-xs btn-default'])
+                            .
+                            Html::a('Редактировать',['post/edit','id'=>$model->id],['class'=>'btn btn-xs btn-warning', 'style'=>'margin-left:10px;']);
+
+                    },
+                ],
+
+
+
 
 
             ],

@@ -63,11 +63,11 @@ AppAsset::register($this);
             'items' => [
                 ['label' => 'Айкидо', 'url' => ['/real/index']],
                 ['label' => 'Любомир  Врачаревич', 'url' => '#'],
-                ['label' => 'Мастера', 'url' => '#'],
+                ['label' => 'Мастера', 'url' => ['real/coaches']],
                 ['label' => 'Клубы', 'url' => '#'],
             ],
         ],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Контакты', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
       $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -137,53 +137,14 @@ AppAsset::register($this);
 
   <!-- Carousel
 ================================================== -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-      <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <div class="item">
-        <img class="first-slide" src="images/img_1.jpg" alt="First slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Example headline.</h1>
-            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="item active left">
-        <img class="second-slide" src="images/img_2.jpg" alt="Second slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="item next left">
-        <img class="third-slide" src="images/img_3.jpg" alt="Third slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="
+  background: url(images/img_1.jpg) no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+    height: 560px;">
+
   </div><!-- /.carousel -->
 
 <?endif;?>

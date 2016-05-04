@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function actionIndex()
     {
-        $postQuery = Post::find();
+        $postQuery = Post::find()->where(['active'=>true]);
 
         $PostDataProvider = new ActiveDataProvider([
             'query' => $postQuery,
@@ -31,11 +31,8 @@ class PostController extends Controller
 
     public function actionView($id)
     {
-
         $post = Post::find()->where(['id'=>$id])->one();
-
         return $this->render('view',['post'=>$post]);
-
     }
 
 }

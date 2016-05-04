@@ -32,8 +32,9 @@ class Post extends ActiveRecord
             ['name', 'required'],
             ['preview', 'required'],
             ['content', 'required'],
+            ['active', 'required'],
 
-            ['name,preview,content','safe'],
+            ['name,preview,content,active','safe'],
         ];
     }
 
@@ -55,10 +56,17 @@ class Post extends ActiveRecord
         return [
             'id' => 'ID #',
             'name' => 'Заголовок',
+            'active' => 'Новость активна',
             'preview' => 'Превью',
             'content' => 'Содержание',
             'created_at' => 'Дата создания',
             'updated_at' => 'Дата обновления',
         ];
     }
+
+    public function getFormattedDate()
+    {
+        return \Yii::$app->formatter->asDate($this->created_at);
+    }
+
 }

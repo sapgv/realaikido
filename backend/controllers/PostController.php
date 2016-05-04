@@ -67,7 +67,7 @@ class PostController extends Controller
         }
 
         return $this->render('edit', [
-            'task' => $post,
+            'post' => $post,
         ]);
 
     }
