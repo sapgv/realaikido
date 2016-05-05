@@ -28,4 +28,13 @@ class RealController extends Controller
 
     }
 
+    public function actionGym()
+    {
+
+        return $this->render('gym');
+
+    }
+
+
+
 }

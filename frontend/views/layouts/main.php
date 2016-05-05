@@ -56,73 +56,31 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Главная', 'url' => ['/site/index']],
         ['label' => 'Новости', 'url' => ['/post/index']],
         [
             'label' => 'Реальное айкидо',
             'items' => [
                 ['label' => 'Айкидо', 'url' => ['/real/index']],
                 ['label' => 'Любомир  Врачаревич', 'url' => '#'],
-                ['label' => 'Мастера', 'url' => ['real/coaches']],
-                ['label' => 'Клубы', 'url' => '#'],
             ],
         ],
-        ['label' => 'Контакты', 'url' => ['/site/contact']],
+        [
+            'label' => 'Клуб',
+            'items' => [
+                ['label' => 'Тренеры', 'url' => ['real/coaches']],
+                ['label' => 'Расписание и залы', 'url' =>['real/gym']],
+                ['label' => 'Контакты', 'url' => ['/site/contact']],
+            ],
+        ],
+
     ];
-    if (Yii::$app->user->isGuest) {
-      $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-      $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
 
-      $menuItems[] = [
-          'label' => 'Личный кабинет',
-          'items' => [
-
-              ['label' => 'login', 'url' => ['/site/login']],
-              ['label' => 'logout', 'url' => '/site/logout'],
-          ],
-      ];
-//        $menuItems[] = '<li>'
-//            . Html::beginForm(['/site/logout'], 'post')
-//            . Html::submitButton(
-//                'Logout (' . Yii::$app->user->identity->username . ')',
-//                ['class' => 'btn btn-link']
-//            )
-//            . Html::endForm()
-//            . '</li>';
-    }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
-//        'encodeLabels'=>true,
         'items' => $menuItems,
     ]);
 
 
-
-    //    echo Nav::widget([
-    //        'items' => [
-    //            [
-    //                'label' => 'Home',
-    //                'url' => ['site/index'],
-    ////                'linkOptions' => [...],
-    //        ],
-    //        [
-    //            'label' => 'Dropdown',
-    //            'items' => [
-    //                ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
-    //                '<li class="divider"></li>',
-    //                '<li class="dropdown-header">Dropdown Header</li>',
-    //                ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
-    //            ],
-    //        ],
-    //        [
-    //            'label' => 'Login',
-    //            'url' => ['site/login'],
-    //            'visible' => Yii::$app->user->isGuest
-    //        ],
-    //    ],
-    //    'options' => ['class' =>'nav navbar-nav navbar-right'], // set this to nav-tab to get tab-styled navigation
-    //]);
 
     NavBar::end();
 
