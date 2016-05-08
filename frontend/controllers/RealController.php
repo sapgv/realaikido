@@ -21,17 +21,12 @@ class RealController extends Controller
 
     }
 
-    public function actionCoaches()
+
+
+    public function actionLubomir()
     {
 
-        return $this->render('coaches');
-
-    }
-
-    public function actionGym()
-    {
-
-        return $this->render('gym');
+        return $this->render('Lubomir');
 
     }
 

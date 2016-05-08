@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 use backend\models\AdminLoginForm;
+use common\models\Post;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -30,6 +31,11 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [
+                        'actions' => ['index', 'login'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
             'verbs' => [
@@ -55,7 +61,9 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $posts = Post::find()->all();
+
+        return $this->render('index',['posts'=>$posts]);
     }
 
     public function actionLogin()

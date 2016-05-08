@@ -12,6 +12,15 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+
+    'aliases' => [
+
+        //images
+        '@images' => '@frontend/web/images',
+        '@imagesUrl' => 'http://realaikido/images',
+
+    ],
+
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',

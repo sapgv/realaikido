@@ -7,7 +7,7 @@
  */
 
 $this->title = 'Новости';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <h3><?= $post->name;?></h3>

@@ -36,11 +36,9 @@ AppAsset::register($this);
   <div class="container">
 
     <div class="row">
-      <div class="col-lg-6">
 
-      </div>
-      <div class="col-lg-6">
-        <h2 class="pull-right" style="color: #9d9d9d">+7 (912) 2 800 572</h2>
+      <div class="col-lg-12">
+        <h2 class="pull-right" style="margin-top:10px; color: #9d9d9d">+7 (912) 2 800 572</h2>
 
       </div>
     </div>
@@ -56,21 +54,25 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Новости', 'url' => ['/post/index']],
+        ['label' => 'Новости', 'url' => ['/post/index'],
+            'active'=>$this->context->getUniqueId() ==='post'
+        ],
         [
             'label' => 'Реальное айкидо',
             'items' => [
                 ['label' => 'Айкидо', 'url' => ['/real/index']],
-                ['label' => 'Любомир  Врачаревич', 'url' => '#'],
+                ['label' => 'Любомир  Врачаревич', 'url' => ['real/lubomir']],
             ],
+            'active'=>$this->context->getUniqueId() ==='real'
         ],
         [
             'label' => 'Клуб',
             'items' => [
-                ['label' => 'Тренеры', 'url' => ['real/coaches']],
-                ['label' => 'Расписание и залы', 'url' =>['real/gym']],
-                ['label' => 'Контакты', 'url' => ['/site/contact']],
+                ['label' => 'Тренеры', 'url' => ['club/coaches']],
+                ['label' => 'Расписание и залы', 'url' =>['club/gym']],
+                ['label' => 'Контакты', 'url' => ['/club/contact']],
             ],
+            'active'=>$this->context->getUniqueId() ==='club'
         ],
 
     ];
@@ -96,7 +98,7 @@ AppAsset::register($this);
   <!-- Carousel
 ================================================== -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="
-  background: url(images/img_1.jpg) no-repeat;
+  background: url('images/img_1.jpg') no-repeat;
     -moz-background-size: 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
@@ -106,7 +108,7 @@ AppAsset::register($this);
   </div><!-- /.carousel -->
 
 <?endif;?>
-<div class="container" <?php if(Yii::$app->controller->route != "site/index"): ?> style="margin-top: 100px;"<?php endif;?>>
+<div class="container" <?php if(Yii::$app->controller->route != "site/index"): ?> style="margin-top: 100px;margin-bottom: 50px;"<?php endif;?>>
   <?= Breadcrumbs::widget([
       'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
   ]) ?>

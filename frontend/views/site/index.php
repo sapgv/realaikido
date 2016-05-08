@@ -2,7 +2,9 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+use yii\helpers\Html;
+
+$this->title = 'Клуб Реального Айкидо';
 ?>
 <div class="site-index">
     <!-- Marketing messaging and featurettes
@@ -15,19 +17,19 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-lg-4">
                 <img class="img-circle" src="images/coach/topaev.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>ТОПАЕВ ЕВГЕНИЙ НИКОЛАЕВИЧ</h2>
+                <h2><?= Html::a('ТОПАЕВ ЕВГЕНИЙ НИКОЛАЕВИЧ',['club/coaches','#'=>'topaev'],['style'=>' text-decoration:none'])?></h2>
                 <p>Черный пояс, II дан РА</p
                 <p>Тренер по Реальному Айкидо</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="img-circle" src="images/coach/dacun.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>ДАЦУН АЛЬБЕРТ СЕРГЕЕВИЧ</h2>
+                <h2><?= Html::a('ДАЦУН АЛЬБЕРТ СЕРГЕЕВИЧ',['club/coaches','#'=>'dacun'],['style'=>' text-decoration:none'])?></h2>
                 <p>Черный пояс, I дан РА</p>
                 <p>Тренер по Реальному Айкидо</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img class="img-circle" src="images/coach/tupota.png" alt="Generic placeholder image" width="140" height="140">
-                <h2>ТУПОТА ОЛЕГ ВИКТОРОВИЧ</h2>
+                <h2><?= Html::a('ТУПОТА ОЛЕГ ВИКТОРОВИЧ',['club/coaches','#'=>'tupota'],['style'=>' text-decoration:none'])?></h2>
                 <p>Черный пояс, II дан РА</p
                 <p>Тренер по Реальному Айкидо</p>
             </div><!-- /.col-lg-4 -->
@@ -36,13 +38,13 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
                 <img class="img-circle" src="images/coach/domrachev.jpg" alt="Generic placeholder image" width="140" height="140">
-                <h2>ДОМРАЧЕВ ДМИТРИЙ ОЛЕГОВИЧ</h2>
+                <h2><?= Html::a('ДОМРАЧЕВ ДМИТРИЙ ОЛЕГОВИЧ',['club/coaches','#'=>'domrachev'],['style'=>' text-decoration:none'])?></h2>
                 <p>Черный пояс, I дан РА</p>
                 <p>Тренер по Реальному Айкидо</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4 ">
                 <img class="img-circle" src="images/coach/zharkova2.png" alt="Generic placeholder image" width="140" height="140">
-                <h2>ЖАРКОВА ТАТЬЯНА ПЕТРОВНА</h2>
+                <h2><?= Html::a('ЖАРКОВА ТАТЬЯНА ПЕТРОВНА',['club/coaches','#'=>'zharkova'],['style'=>' text-decoration:none'])?></h2>
                 <p>Коричневый пояс, 1 кю РА</p>
                 <p>Инструктор по Реальному Айкидо</p>
             </div><!-- /.col-lg-4 -->

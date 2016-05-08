@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "*",
         "dmstr/yii2-adminlte-asset": "2.3.0",
         "2amigos/yii2-ckeditor-widget": "1.0.4",
-        "2amigos/yii2-tinymce-widget": "1.1.1"
+        "2amigos/yii2-tinymce-widget": "1.1.1",
+        "zxbodya/yii2-elfinder": "dev-master",
+        "zxbodya/yii2-tinymce": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
