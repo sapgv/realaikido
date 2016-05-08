@@ -14,7 +14,7 @@ use common\models\Post;
 use yii\helpers\Url;
 use yii\data\ActiveDataProvider;
 
-class PostController extends Controller
+class PostController extends AdminController
 {
 
     public function actionIndex()

@@ -32,21 +32,40 @@ use yii\helpers\Html;
     <?php $this->beginBody() ?>
     <div class="wrapper">
 
-        <?= $this->render(
-            'header.php',
-            ['directoryAsset' => $directoryAsset]
-        ) ?>
+        <?
+        if (! \Yii::$app->user->isGuest ) {
 
-        <?= $this->render(
-            'left.php',
-            ['directoryAsset' => $directoryAsset]
-        )
+            echo $this->render(
+                'header.php',
+                ['directoryAsset' => $directoryAsset]
+            );
+
+            echo $this->render(
+                'left.php',
+                ['directoryAsset' => $directoryAsset]
+            );
+
+            echo $this->render(
+                'content.php',
+                ['content' => $content, 'directoryAsset' => $directoryAsset]
+            );
+        }
+
+        else {
+            echo $this->render(
+                'empty.php',
+                ['content' => $content, 'directoryAsset' => $directoryAsset]
+            );
+
+        }
+
+
         ?>
 
-        <?= $this->render(
-            'content.php',
-            ['content' => $content, 'directoryAsset' => $directoryAsset]
-        ) ?>
+
+
+
+        ?>
 
     </div>
 

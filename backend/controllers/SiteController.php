@@ -7,11 +7,12 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use backend\controllers\AdminController;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends AdminController
 {
     /**
      * @inheritdoc
