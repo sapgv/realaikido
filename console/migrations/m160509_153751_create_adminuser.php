@@ -32,10 +32,10 @@ class m160509_153751_create_adminuser extends Migration
         ], $tableOptions);
 
         $this->insert('adminuser', [
-            'id' => '2',
+            'id' => '3',
             'username' => 'admin',
-            'auth_key' => 'd-bjOhCrDXT0CssLH4WkF5USEC9_Ny9b',
-            'password_hash' => '$2y$13$bSuLKMTfXui9gVijAUDDPeuSSCMYaBRpYFygLIuu./s9KL2XMalyu.',
+            'auth_key' => 'd-C0wLYdkAoRhuC1ORbpIbcOt1BMSf-Sn8',
+            'password_hash' => '$2y$13$KMuxzLV8yiHgsig.YhlJwe4SjpdsJ3TE.BGgQmDDU0j5WVSzvkab2',
             'password_reset_token' =>  null,
             'email' => 'admin@mail.ru',
             'status' =>  10,
